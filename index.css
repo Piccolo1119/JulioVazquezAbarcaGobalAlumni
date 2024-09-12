@@ -1,0 +1,139 @@
+/* Estilos generales */
+body {
+    display: grid;
+    grid-template-rows: 15% auto 85%;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "blanco"
+    "verde"
+    "azul";
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el área blanca */
+.blanco {
+    grid-area: blanco;
+}
+
+/* Estilos para el área verde */
+.verde {
+    width: 180px;
+    height: 180px; 
+    background-color: #00a380;
+    position: absolute;
+    left: 20%;
+    transform: translateX(-50%);
+    top: calc(20% - 5vw);
+    z-index: 1;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    grid-area: verde;
+    padding: 15px;
+}
+
+.texto {
+    color: white;
+    font-size: 1.8em;
+}
+
+/* Estilos para el área azul */
+.azul {
+    grid-area: azul;
+    background-color: #000b3d;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "contenido carrusel";
+}
+
+/* Estilos para el contenido */
+.contenido {
+    grid-area: contenido;
+    color: white;
+    display: grid;
+    place-content: center;
+    padding: 80px;
+    font-weight: 100;
+}
+
+/* Estilos para el carrusel */
+.carrusel {
+    grid-area: carrusel;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+/* Estilos para los botones del carrusel */
+button {
+    background-color: transparent;
+}
+
+.control {
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Contenedor del carrusel */
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* Riel del carrusel */
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 40px;
+}
+
+/* Ítem del carrusel */
+.carousel-item {
+    width: calc(85% / 3);
+    background-color: white;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    /* Eliminar márgenes para asegurar que no haya espacio entre ítems */
+    margin-right: 0;
+}
+
+/* Título */
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-weight: 600;
+}
+
+/* Subtítulo */
+.subtitulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* Línea separadora */
+.linea {
+    width: 60%; /* Ajusta el ancho según sea necesario */
+    height: 2px; /* Grosor de la línea */
+    background-color: #000; /* Color de la línea */
+    margin: 10px 0; /* Espaciado arriba y abajo de la línea */
+    margin-left: 45px;
+}
+
+
