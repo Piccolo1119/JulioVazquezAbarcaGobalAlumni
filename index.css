@@ -99,7 +99,7 @@ button {
 
 /* Ítem del carrusel */
 .carousel-item {
-    width: calc(85% / 3);
+    width: calc(86% / 3);
     background-color: white;
     height: 300px;
     border-radius: 10px;
@@ -137,3 +137,141 @@ button {
 }
 
 
+/* Estilos para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "blanco"
+        "verde"
+        "azul";
+        overflow-x: hidden; /* Asegura que no haya scroll lateral */
+    }
+
+    /* Estilos para el área verde */
+    .verde {
+        width: 150px; /* Ajuste para tablets */
+        height: 150px;
+        left: 50%; /* Centrado horizontal */
+        top: 10%;
+        transform: translateX(-50%);
+        margin-top: 30px;
+    }
+
+    /* Ajustes para el área azul */
+    .azul {
+        display: block;
+        padding-bottom: 20px; /* Asegura que no haya espacio en blanco */
+        grid-template-columns: 1fr;
+        width: 100%; /* Asegura que no se desborde el área azul */
+        overflow-x: hidden; /* Evita desbordamiento lateral */
+    }
+
+    /* Estilos para el contenido */
+    .contenido {
+        padding: 80px 100px; /* Ajustar padding para tablets */
+        margin-top : 200px;
+    }
+
+    /* Ajustes del carrusel */
+    .carrusel {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .carousel-container {
+        width: 100%; /* Asegura que no se desborde el carrusel */
+        overflow-x: hidden; /* Evita scroll lateral en el carrusel */
+    }
+
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease;
+        gap: 121px;
+    }
+
+    .carousel-item {
+        width: calc(70% / 2); /* Mostrar dos ítems */
+        margin-right: 20px;
+        box-sizing: border-box; /* Asegura que el padding y border no causen desbordamiento */
+    }
+
+    /* Ajustes para el botón del carrusel */
+    .control {
+        font-size: 1.5em;
+        padding: 15px;
+    }
+}
+
+/* Estilos para moviles */
+
+@media (max-width: 767px) {
+    body {
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "blanco"
+        "verde"
+        "azul"; 
+        overflow-x: hidden; /* Asegura que no haya scroll lateral */
+    }
+
+     /* Estilos para el área verde */
+     .verde {
+        width: 150px; /* Ajuste para tablets */
+        height: 150px;
+        left: 50%; /* Centrado horizontal */
+        top: 10%;
+        transform: translateX(-50%);
+        margin-top: 30px;
+    }
+
+    /* Ajustes para el área azul */
+    .azul {
+        display: block;
+        padding-bottom: 20px; /* Asegura que no haya espacio en blanco */
+        grid-template-columns: 1fr;
+        width: 100%; /* Asegura que no se desborde el área azul */
+        overflow-x: hidden; /* Evita desbordamiento lateral */
+    }
+
+    /* Estilos para el contenido */
+    .contenido {
+        padding: 80px 80px; /* Ajustar padding para moviles */
+        margin-top : 200px;
+    }
+
+    /* Ajustes del carrusel */
+    .carrusel {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .carousel-container {
+        width: 100%; /* Asegura que no se desborde el carrusel */
+        overflow-x: hidden; /* Evita scroll lateral en el carrusel */
+    }
+
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease;
+        gap: 200px;
+    }
+
+    .carousel-item {
+        width: 65%;
+        margin-right: 20px;
+        box-sizing: border-box; /* Asegura que el padding y border no causen desbordamiento */
+    }
+
+    /* Ajustes para el botón del carrusel */
+    .control {
+        font-size: 1.5em;
+        padding: 15px;
+    }
+}

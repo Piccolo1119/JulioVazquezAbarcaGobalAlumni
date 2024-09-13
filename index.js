@@ -14,8 +14,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const items = Array.from(document.querySelectorAll('.carousel-item'));
 
+    // Variables para el tamaño del gap según el tamaño de la pantalla
+    let gap = 40; // Valor por defecto para pantallas grandes
+
+    // Función para recalcular el tamaño del gap y el ancho de los ítems según el ancho de la pantalla
+    function updateResponsiveSettings() {
+        const screenWidth = window.innerWidth;
+
+        if (screenWidth >= 768 && screenWidth <= 1024) {
+            gap = 121; // Para tablets
+        } else if (screenWidth > 1024) {
+            gap = 40; // Para pantallas grandes
+        } else if( screenWidth < 768) {
+            gap = 200; // Para pantallas menores
+        }
+
+        // Recalcular el ancho del ítem con el nuevo gap
+        itemWidth = getItemWidth();
+        updateCarousel();
+    }
+
     function getItemWidth() {
-        return items[0].getBoundingClientRect().width;
+        return items[0].getBoundingClientRect().width + gap; // Incluye el gap en el cálculo
     }
 
     let itemWidth = getItemWidth();
@@ -42,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentIndex = 1; // Go to the first real item
                 updateCarousel();
             }
-        }, 50);
+        }, 300);
     }
 
     nextButton.addEventListener('click', () => {
@@ -63,5 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Actualizar el carrusel cuando se redimensiona la ventana
+    window.addEventListener('resize', updateResponsiveSettings);
+
+    // Inicializa el carrusel
+    updateResponsiveSettings();
     updateCarousel();
 });
