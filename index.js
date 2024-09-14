@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const carouselItems = Array.from(document.querySelectorAll('.carousel-item'));
     const itemCount = carouselItems.length;
 
-    // Clone the first and last items to create an infinite loop effect
+    // Clona el primer y el último item para crear un efecto infinito.
     const firstItem = carouselItems[0].cloneNode(true);
     const lastItem = carouselItems[itemCount - 1].cloneNode(true);
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (screenWidth > 1024) {
             gap = 40; // Para pantallas grandes
         } else if( screenWidth < 768) {
-            gap = 200; // Para pantallas menores
+            gap = 200; // Para móviles
         }
 
         // Recalcular el ancho del ítem con el nuevo gap
@@ -56,10 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             carouselTrack.style.transition = 'transform 0.5s ease';
             if (index === 0) {
-                currentIndex = items.length - 2; // Go to the last real item
+                currentIndex = items.length - 2; // Ve al último item real
                 updateCarousel();
             } else if (index === items.length - 1) {
-                currentIndex = 1; // Go to the first real item
+                currentIndex = 1; // Ve al primer item real
                 updateCarousel();
             }
         }, 300);
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     nextButton.addEventListener('click', () => {
         currentIndex++;
         if (currentIndex >= items.length) {
-            goToIndex(1); // Go to the first real item
+            goToIndex(1); // ve al primer item real
         } else {
             updateCarousel();
         }
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     prevButton.addEventListener('click', () => {
         currentIndex--;
         if (currentIndex < 0) {
-            goToIndex(items.length - 2); // Go to the last real item
+            goToIndex(items.length - 2); // ve al último item real
         } else {
             updateCarousel();
         }
